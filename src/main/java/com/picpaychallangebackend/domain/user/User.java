@@ -2,10 +2,7 @@ package com.picpaychallangebackend.domain.user;
 
 import com.picpaychallangebackend.dtos.UserDTO;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 
@@ -13,7 +10,8 @@ import java.math.BigDecimal;
 @Table(name = "users")
 @Getter
 @Setter
-@AllArgsConstructor()
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of="id")
 public class User {
     @Id
@@ -36,6 +34,7 @@ public class User {
         this.email = data.email();
         this.password = data.password();
         this.balance = data.balance();
+        this.document = data.document();
         this.userType = data.userType();
     }
 }
